@@ -1,0 +1,13 @@
+{{#each leagueTeam}}
+  <div>
+    <h1>{{this.name}}</h1>
+    <h2>Manager: {{this.coach.name}}</h2>
+    <img src="{{this.crest}}" alt="">
+    <a href="{{this.website}}" target="_blank"><h4>{{this.website}}</h4></a>
+
+
+    {{!-- {{#each this.squad}}
+    <li>{{this.name}}</li>
+    {{/each}} --}}
+  </div>
+{{/each}}

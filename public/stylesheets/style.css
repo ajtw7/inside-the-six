@@ -39,3 +39,11 @@ h1 {
   margin: 30px auto 0;
 
 }
+
+.leagues, .player, .league-team {
+  width: 80%;
+  /* border-top: 1px solid black; */
+  border-bottom: 1px solid black;
+  margin: 10px auto;
+  padding-bottom: 20px;
+}

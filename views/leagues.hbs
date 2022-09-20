@@ -2,9 +2,16 @@
   <h1>STATS GALORE</h1>
 
   {{#each stats}}
-    <div>
+    <div class="leagues">
       <p>{{this.area.name}}</p>
-      <h3>{{this.name}}</h3>
+      <h3>
+        {{#if this.code}}
+          <a href="/leagues/{{this.code}}/teams">{{this.name}}</a>
+        {{else}}
+          <span>{{this.name}}</span>
+        {{/if}}
+
+      </h3>
       <img src="{{this.emblem}}" alt="League Emblem" />
     </div>
   {{/each}}

@@ -31,10 +31,10 @@ const index = require("./routes/index.routes");
 app.use("/", index);
 
 const authRouter = require("./routes/auth.routes");
-app.use("/", authRouter)
+app.use("/auth", authRouter)
 
 const watchlistRouter = require("./routes/watchlist.routes")
-app.use("/", watchlistRouter)
+app.use("/watchlist", watchlistRouter)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

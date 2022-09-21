@@ -11,4 +11,6 @@ const watchlistPlayerSchema = new schema({
 
 })
 
-module.exports = model('WatchlistPlayer', watchlistPlayerSchema)
+const WatchlistPlayer = model('WatchlistPlayer', watchlistPlayerSchema)
+
+module.exports = WatchlistPlayer;

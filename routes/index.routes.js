@@ -72,6 +72,34 @@ router.get('/teams/:teamCode/roster', (req, res, next) => {
     .catch(err => console.log(err))
 })
 
+// //Get player-profile
+router.get('/roster/:playerId/profile', (req, res, next) => {
+  const player = req.params.playerId
+  // const playerId = res.data.squad
+
+  axios({
+      method: 'get',
+      url: `https://api.football-data.org/v4/persons/${player}`,
+      headers: {
+        "X-Auth-Token": "bd8fb1ba95854895b437b0e5ffc4bf1a"
+      }
+    })
+    .then(axiosResponse => {
+      
+      console.log(axiosResponse.data)
+      res.render('watchlist/player-profile', {
+        team: axiosResponse.data
+      })
+    })
+    .catch(err => console.log(err))
+
+})
+
+
+
+
+
+
 // Get  All Teams Page
 router.get('/all-teams', (req, res, next) => {
   axios({

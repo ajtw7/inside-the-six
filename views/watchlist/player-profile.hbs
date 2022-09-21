@@ -1,0 +1,22 @@
+<div>
+{{!-- <h3>{{team.name}}</h3> --}}
+    
+    <form method="post" action="/watchlist/new-watchlist">
+        <div>
+            <input type="text" name="fullname" id="" value="{{team.name}}">
+        </div>
+        <div>
+            <input type="text" name="currentTeam" id="" value="{{team.currentTeam.area.name}}">
+        </div>
+        <div>
+            <input type="text" name="position" id="" value="{{team.position}}">
+        </div>
+        <div>
+            <input type="text" name="shirtNumber" id="" value="{{team.shirtNumber}}">
+        </div>
+        <div>
+            <button type="submit">Add to Watchlist</button>
+        </div>
+
+    </form>
+</div>

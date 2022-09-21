@@ -7,18 +7,16 @@ const router = new Router();
 
 router.get('/watchlist', (req, res, next) => {
     // console.log('holaaaaa')
-    res.render('watchlist')
+    res.render('watchlist/watchlist')
 
 })
 
-router.post('/watchlist', (req, res, next) => {
+router.post('/new-watchlist', (req, res, next) => {
     console.log('The form data:', req.body)
-
-    // const {
-    //     fullname:
-        
-    // }
+    
 
 })
+
+router.post('/')
 
 module.exports = router;

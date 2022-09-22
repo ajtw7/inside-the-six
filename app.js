@@ -31,7 +31,7 @@ const index = require("./routes/index.routes");
 app.use("/", index);
 
 const authRouter = require("./routes/auth.routes");
-app.use("/auth", authRouter)
+app.use("/", authRouter)
 
 const watchlistRouter = require("./routes/watchlist.routes")
 app.use("/watchlist", watchlistRouter)

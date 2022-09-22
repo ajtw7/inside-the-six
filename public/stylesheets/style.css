@@ -11,6 +11,14 @@ h1 {
   color: 15px;
 }
 
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+
+}
+
 /* .signup-body {
   display: flex;
   flex-direction: column;
@@ -178,15 +186,19 @@ form button:hover {
 }
  
 ul {
-  border-bottom: 2px solid #43a3e6;
+  /* border-bottom: 2px solid #43a3e6; */
+  display: flex;
+  width: 100vw;
   height: 30px;
   padding: 1em 0;
+  justify-content: space-evenly;
   list-style-type: none;
+  /* margin: 0 auto; */
 }
  
-ul li {
+/* ul li {
   line-height: 20px;
-}
+} */
  
 #to-right {
   padding: 1em;

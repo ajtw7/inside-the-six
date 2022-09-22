@@ -9,15 +9,19 @@
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}} --}}
-<h2>Welcome {{foundUser.username}}!</h2>
+<h2>Welcome {{thisUser.username}}!</h2>
 
 <h3>watchlist</h3>
 
-{{#each foundUser.watchlistPlayers}}
-<p>Name: {{this.fullName}}</p>
+{{#each thisUser.watchlistPlayers}}
+<div>
+  <p>Name: {{this.fullName}}</p>
 <p>Team: {{this.currentTeam}}</p>
 <p>Position: {{this.position}}</p>
 <p>Number: {{this.shirtNumber}}</p>
+<a href="/watchlist/players/{{this._id}}/delete">Delete Player</a>
+</div>
+
 {{/each}}
 </body>
 

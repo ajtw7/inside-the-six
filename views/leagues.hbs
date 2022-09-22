@@ -1,8 +1,8 @@
-<div>
-  <h1>STATS GALORE</h1>
+<div id="league">
+  <h1>LEAGUES</h1>
 
   {{#each stats}}
-    <div class="leagues">
+    <div class="each-league">
       <p>{{this.area.name}}</p>
       <h3>
         {{#if this.code}}
@@ -12,7 +12,7 @@
         {{/if}}
 
       </h3>
-      <img src="{{this.emblem}}" alt="League Emblem" />
+      <div class="league-emblem"><img src="{{this.emblem}}" alt="League Emblem" /></div>
     </div>
   {{/each}}
 

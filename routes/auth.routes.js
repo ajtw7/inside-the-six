@@ -113,8 +113,9 @@ router.get('/profile', isAuthenticated, (req, res, next) => {
         path: 'watchlistPlayers'
     })
     .then(foundUser => {
-        console.log(foundUser, "FOUND!!!!!!")
-        res.render('users/user-profile', foundUser)
+        const thisUser = foundUser[0]
+        console.log(foundUser[0].username, "FOUND!!!!!!")
+        res.render('users/user-profile', {thisUser: thisUser})
     })
     .catch(err => console.log(err))
     

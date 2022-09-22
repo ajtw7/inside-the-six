@@ -11,7 +11,7 @@ h1 {
   color: 15px;
 }
 
-.signup-body {
+/* .signup-body {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -21,10 +21,10 @@ h1 {
   background-color: #f1f1f1;
   margin: 0;
   padding: 0
-}
-
+} */
+/* 
 .form-container {
-  /* display: flex; */
+
   width: 40%;
   height: 300px;
   justify-content: space-evenly;
@@ -38,14 +38,149 @@ h1 {
   flex-direction: column;
   margin: 30px auto 0;
 
-}
+} */
 
-.leagues, .player, .league-team {
+.each-league, .player, .league-team {
   width: 80%;
   /* border-top: 1px solid black; */
   border-bottom: 1px solid black;
-  margin: 10px auto;
-  padding-bottom: 20px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+/* --------------------------------------Styling for leagues */
+
+.each-league {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.each-league:hover {
+  background-color: antiquewhite;
+}
+
+.each-league img {
+  object-fit: scale-down;
+}
+
+
+.league-emblem {
+  display: flex;
+  height: auto;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------Stying for teams */
+
+.league-team {
+  display: flex;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------ */
+form {
+  margin: 30px auto;
+  width: 380px;
+}
+ 
+form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+ 
+form input,
+form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+ 
+form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+ 
+form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
+ 
+.error {
+  background: #f02b63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+ 
+ul {
+  border-bottom: 2px solid #43a3e6;
+  height: 30px;
+  padding: 1em 0;
+  list-style-type: none;
+}
+ 
+ul li {
+  line-height: 20px;
+}
+ 
+#to-right {
+  padding: 1em;
+  float: right;
+}
+ 
+#to-right span {
+  color: #43a3e6;
+  font-size: 1.5em;
+}
+ 
+#form h2 {
+  display: flex;
+  justify-content: center;
+}
+ 
+#to-left {
+  float: left;
+}
+ 
+#to-left p a {
+  color: #000;
+  font-weight: bold;
+  font-size: 2em;
+}
+ 
+#logout-form {
+  display: inline;
+}
+ 
+#logout-form button {
+  width: 120px;
 }
 
 

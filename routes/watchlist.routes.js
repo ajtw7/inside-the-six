@@ -33,7 +33,7 @@ WatchlistPlayer.create({
         console.log(req.session.user._id, 'userid')
         return User.findByIdAndUpdate(req.session.user._id, 
             {
-                $set: {watchlistPlayers: newPlayer._id}
+                $addToSet: {watchlistPlayers: newPlayer._id}
             }, { new: true })
     })
     .then(updatedUser => {
@@ -44,6 +44,14 @@ WatchlistPlayer.create({
 
 })
 
-router.post('/')
+router.get('/players/:playerId/delete', (req, res, next) => {
+    const myPlayerId = req.params.playerId
+
+    WatchlistPlayer.findByIdAndDelete(myPlayerId)
+    .then(deletedPlayer => {
+        console.log(deletedPlayer)
+        res.redirect('/profile')
+    })
+})
 
 module.exports = router;

@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
   // } else {
   //   req.session.viewCount = 1
   // }
-  res.render("index");
+  res.render('auth/login.hbs')
 });
 
 // Get Leagues page

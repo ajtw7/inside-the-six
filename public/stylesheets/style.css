@@ -48,6 +48,14 @@ h1 {
   padding: 30px 0;
 }
 
+.player {
+  width: 20%;
+  /* border-top: 1px solid black; */
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  padding: 30px 10px; 
+}
+
 /* --------------------------------------Styling for leagues */
 
 .each-league {
@@ -62,11 +70,11 @@ h1 {
 }
 
 .each-league img {
-  object-fit: scale-down;
+  object-fit: contain;
 }
 
 
-.league-emblem {
+.league-emblem .team-emblem {
   display: flex;
   height: auto;
   width: 20%;
@@ -74,11 +82,41 @@ h1 {
   justify-content: center;
 }
 
+
 /* ---------------------------------------Stying for teams */
 
 .league-team {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 auto;
 }
+
+.league-team:hover {
+  background-color: hsl(0, 79%, 72%, .5);
+}
+
+
+/* ---------------------------------------Styling for players */
+.squad {
+  width: 80%;
+  flex-direction: row;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.player:hover {
+  background-color: black;
+  color: white 
+}
+
+/* ---------------------------------------------------------- */
+
 
 
 

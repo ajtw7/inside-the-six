@@ -1,9 +1,9 @@
 {{#each leagueTeam}}
   <div class="league-team">
-    <div id="crest-and-name">
+    <div id="team-emblem">
       <img src="{{this.crest}}" alt="" />
-      <h1><a href="/teams/{{this.id}}/roster">{{this.name}}</a></h1>
     </div>
+    <h1><a href="/teams/{{this.id}}/roster">{{this.name}}</a></h1>
     <h2>Manager: {{this.coach.name}}</h2>
     <a href="{{this.website}}" target="_blank"><h4>{{this.website}}</h4></a>
 

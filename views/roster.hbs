@@ -1,9 +1,11 @@
 {{! <h1>hola</h1> }}
 
-{{#each team.squad}}
+<div class="squad">
+  {{#each team.squad}}
   <div class="player">
     <h1>{{this.name}}</h1>
     <h3>{{this.position}}</h3>
     <div><a href="/roster/{{this.id}}/profile">Player Profile</a></div>
   </div>
 {{/each}}
+</div>

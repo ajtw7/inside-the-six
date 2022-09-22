@@ -6,6 +6,7 @@ const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
 const User = require('../models/User.model')
 const mongoose = require('mongoose');
+const {isAuthenticated, isNotAuthenticated} = require('../middlewares/auth.middleware')
 
 
 
@@ -43,7 +44,7 @@ router.post('/signup', (req, res, next) => {
         })
         .then(userFromDB => {
             console.log('The newest user is: ', userFromDB);
-            res.redirect('/userProfile')
+            res.redirect('/profile')
         })
         .catch(error => {
             if (error instanceof mongoose.Error.ValidationError) {
@@ -62,8 +63,62 @@ router.post('/signup', (req, res, next) => {
         });
 });
 
-router.get('/userProfile', (req, res, next) => {
-    res.render('users/user-profile.hbs')
+
+// routes for login page
+router.get('/login', (req, res, next) => {
+    res.render('auth/login')
+
+})
+
+router.post('/login', (req, res, next) => {
+    console.log(req.body)
+    const {
+        username,
+        password
+    } = req.body;
+
+    User.findOne({
+            username
+        })
+        .then(foundUser => {
+            console.log(foundUser);
+            if (!foundUser) {
+                res.send('no user matching')
+                return
+            }
+
+            const isValidPassword = bcryptjs.compareSync(password, foundUser.passwordHash)
+
+            if (!isValidPassword) {
+                res.send('incorrect password');
+                return
+            }
+
+            req.session.user = foundUser
+
+            res.redirect('/profile')
+        })
+        .catch(err => res.send(err))
+
+
+})
+
+
+// User profile
+router.get('/profile', isAuthenticated, (req, res, next) => {
+    User.find({
+        _id: req.session.user._id
+    })
+    .populate({
+        path: 'watchlistPlayers'
+    })
+    .then(foundUser => {
+        console.log(foundUser, "FOUND!!!!!!")
+        res.render('users/user-profile', foundUser)
+    })
+    .catch(err => console.log(err))
+    
+
 })
 
 

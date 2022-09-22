@@ -1,3 +1,23 @@
 <body>
-    <h1>WELCOME {{username}}</h1>
+    {{!-- <h1>WELCOME {{req.body.username}}</h1>
+    {{#if User}}
+  <h2>Welcome, {{username }}!</h2>
+  <p>This is your profile page my friend!</p>
+  <button>
+    <a href="/Profile">Reload the page</a>
+  </button>
+{{else}}
+  <p>Still no logged in user, sorry!</p>
+{{/if}} --}}
+<h2>Welcome {{foundUser.username}}!</h2>
+
+<h3>watchlist</h3>
+
+{{#each foundUser.watchlistPlayers}}
+<p>Name: {{this.fullName}}</p>
+<p>Team: {{this.currentTeam}}</p>
+<p>Position: {{this.position}}</p>
+<p>Number: {{this.shirtNumber}}</p>
+{{/each}}
 </body>
+

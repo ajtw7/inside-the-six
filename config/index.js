@@ -17,6 +17,9 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+// require session
+const session = require('express-session')
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -24,7 +27,9 @@ module.exports = (app) => {
 
   // To have access to `body` property in the request
   app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
+  app.use(express.urlencoded({
+    extended: false
+  }));
   app.use(cookieParser());
 
   // Normalizes the path to the views folder
@@ -36,4 +41,19 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+
+  // use session
+  app.use(
+    session({
+      secret: process.env.SESS_SECRET,
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        maxAge: 600000 // 60 * 1000 ms === 1 min
+      }
+    })
+  );
 };

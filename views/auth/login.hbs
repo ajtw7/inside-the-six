@@ -1,13 +1,14 @@
 <body class="signup-body">
-    <h1>SIGNUP FOR AN ACCOUNT</h1>
+    <h1>LOGIN TO YOUR ACCOUNT</h1>
   <div class="form-container">
-    <form method="post" action="/signup">
+
+    <form method="post" action="/login">
       <div>
         <label for="">Username</label>
         <input type="text" name="username" id="" placeholder="King Drew" />
       </div>
 
-      <div>
+      {{!-- <div>
         <label for="">Email</label>
         <input
           type="email"
@@ -15,7 +16,7 @@
           id=""
           placeholder="drew@insidethesix.com"
         />
-      </div>
+      </div> --}}
 
       <div>
         <label for="">Password</label>
@@ -23,7 +24,7 @@
       </div>
 
       <div>
-        <button type="submit">Create Account</button>
+        <button type="submit">Login</button>
       </div>
       {{#if errorMessage}}
         <p class="error">{{errorMessage}}</p>

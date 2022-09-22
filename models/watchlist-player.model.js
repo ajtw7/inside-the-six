@@ -3,7 +3,7 @@ const {
     model
 } = require('mongoose');
 
-const watchlistPlayerSchema = new schema({
+const watchlistPlayerSchema = new Schema({
     fullName: String,
     currentTeam: String,
     position: String,
